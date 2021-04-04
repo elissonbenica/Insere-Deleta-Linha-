@@ -1,0 +1,28 @@
+function onEdit() {
+
+  var spreadsheet = SpreadsheetApp.getActive();
+  var abaAtiva = spreadsheet.getSheetName();
+  var nameAba = spreadsheet.getSheetByName(abaAtiva);
+  var maxLine = nameAba.getMaxRows();
+  var ultimaLinha = spreadsheet.getRange('D1').getValue();
+  var digitaLinha = spreadsheet.getRange('H1').getValue();
+
+  Logger.log(maxLine);
+  Logger.log(ultimaLinha);
+  Logger.log(digitaLinha);
+
+  if (maxLine <= ultimaLinha + 7 ){  
+    spreadsheet.getActiveSheet().insertRowsAfter(spreadsheet.getActiveSheet().getMaxRows(), 1);
+    spreadsheet.getRange('I7:AG7').activate();
+    spreadsheet.getActiveRange().autoFill(spreadsheet.getRange('I7:AG'), SpreadsheetApp.AutoFillSeries.DEFAULT_SERIES);
+    spreadsheet.getActiveSheet().getFilter().remove();
+    spreadsheet.getRange('B6:I').createFilter();
+    spreadsheet.getRange(digitaLinha).activate();
+  }
+
+  if (maxLine  >= ultimaLinha + 9 ){  
+    spreadsheet.getActiveSheet().deleteRows(spreadsheet.getActiveSheet().getMaxRows(), 1);
+    spreadsheet.getRange(digitaLinha).activate();
+  }
+
+};
