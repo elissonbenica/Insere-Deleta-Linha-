@@ -1,6 +1,4 @@
 # Insere-Deleta-Linha-
 Insere e deleta linha planilha automaticamente deixando sempre duas de sobra.
 
-Ao editar a linha de entrada o script irá detectar que não há duas linhas sobrando mais, então será incrementada uma linha e irá copiar a formulá e formatação condicional da de cinam.
-
-O mesmo acontece ai apagar o conteúdo da ultima linha com conteúdo, o script irá detectar que tem mais de duas linhas sobrando e irá apagar uma.
+Não foi concluída a melhoria, que ao ocorrer uma adiversidade de apagar muitos conteúdos das linhas de uma só vez, o script vai apagar uma de cada vez para cada edição que o usuário fizer, que no caso, o melhor seria que ela apagasse de uma vez só até a planilha ficasse com apenas duas linhas de sobra.
